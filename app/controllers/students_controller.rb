@@ -9,6 +9,6 @@ class StudentsController < ApplicationController
 
   def create
     Student.create(params[:student])
-    redirect_to(students_path)
+    @students = Student.order(:name)
   end
 end

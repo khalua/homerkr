@@ -1,6 +1,1 @@
-var ul = $('<ul>');
-$('#students').empty().append(ul);
-<% @students.each do |student| %>
-  <%="<li class='names'>#{student.name}</li>"  %>
-<% end %>
-$('.names').append(ul);
+$('#students').empty().append( '<%=j render(:partial => 'students') %>' );
