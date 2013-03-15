@@ -6,5 +6,10 @@ describe 'Welcome Page' do
       visit root_path
       page.should have_link('Students')
     end
+
+    it 'displays the assignments link' do
+      visit root_path
+      page.should have_link('Assignments')
+    end
   end
 end

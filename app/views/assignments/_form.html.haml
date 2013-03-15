@@ -1,0 +1,6 @@
+= form_for @assignment, remote => true do |f|
+  = f.label :name
+  = f.text_input :name
+  = f.label :group_size
+  = f.text_input :group_size
+  = f.submit

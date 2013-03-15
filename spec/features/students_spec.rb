@@ -23,5 +23,16 @@ describe 'Students' do
       click_button('Create Student')
       page.find('li', :text => 'Tony')
     end
+
+    it 'alphabetizes the entries, like a boss', :js => true do
+      visit students_path
+      click_link('Add Student')
+      fill_in('student_name', :with => 'Zed')
+      click_button('Create Student')
+      fill_in('student_name', :with => 'Aly')
+      click_button('Create Student')
+      page.find('li:nth-child(1)', :text => 'Aly')
+      page.find('li:nth-child(2)', :text => 'Zed')
+    end
   end
 end
