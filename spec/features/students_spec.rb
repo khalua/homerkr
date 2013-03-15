@@ -18,9 +18,10 @@ describe 'Students' do
   describe 'POST /students' do
     it 'adds a Student to list when form is filled out and button pressed', :js => true do
       visit students_path
+      click_link('Add Student')
       fill_in('student_name', :with => 'Tony')
       click_button('Create Student')
-      page.should have_text('Tony')
+      page.find('li', :text => 'Tony')
     end
   end
 end
